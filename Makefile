@@ -1,5 +1,8 @@
 build: build/Makefile
 	$(MAKE) --no-print-directory -C build
+	@sudo cp build/src/libspasm.dylib /usr/local/lib/libspasm.dylib
+	@sudo mkdir -p /usr/local/include/spasm
+	@sudo cp src/spasm.h /usr/local/include/spasm/spasm.h
 
 build/Makefile:
 	mkdir build ; cd build ; cmake .. ; cd ..
